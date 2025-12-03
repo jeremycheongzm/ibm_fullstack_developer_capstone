@@ -13,6 +13,14 @@ img{
   margin-bottom: 1%;
 }
 
+.contact-img {
+  width: 30%;            /* makes image smaller */
+  height: auto;          /* keeps proportions */
+  display: block;
+  margin: 0 auto;        /* centers it */
+  object-fit: contain;
+}
+
 .row{
   display: flex;  
   flex: 1;
