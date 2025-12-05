@@ -14,3 +14,9 @@
 - `cd server/frontend`
 - `npm install`
 - `npm run build`
+
+## Docker
+- `cd server/database`
+- `docker build . -t nodeapp`
+  - Run command if there are changes made to data/app.js
+- `docker-compose up`
