@@ -11,5 +11,6 @@
 - `python3 manage.py runserver`
 
 ## Frontend
+- `cd server/frontend`
 - `npm install`
 - `npm run build`
