@@ -22,7 +22,7 @@ def initiate():
     # Create CarModel instances with the corresponding CarMake instances
     car_model_data = [
         {
-            "name": "Pathfinder", "        "type "year": 2023,
+            "name": "Pathfinder", "type":"SUV" "year": 2023,
             "car_make": car_make_instances[0], "dealer_id": 1
         },
         {
@@ -65,24 +65,22 @@ def initiate():
             "name": "Carnival", "type": "SUV", "year": 2023,
             "car_make": car_make_instances[3], "dealer_id": 11
         
-            },
+        },
+        {   "name": "Cerato", "type"", "year": 2023,
+            "car_make": car_make_instances[3], "dealer_id": 12
+        },
         {
-
-
-                                 "name": "Cerato", "type"",
-        "year": 2023, "car_make": car_make_inst {
-
-
-                                "name": "Corolla", "type": "Sedan",
-        "year": 2023, "car_make": car_make_in {
-
-
-                                "name": "Camry", "type": "Sedan",
-        "year": 2023, "car_make": car_make_i {
-
-
-                                "name": "Kluger", "type": "SUV",
-        "year": 2023, "car_make": car_make_instances[4], "dealer_id": 15},
+            "name": "Corolla", "type": "Sedan", "year": 2023,
+            "car_make": car_make_instances[4], "dealer_id": 13
+        },
+        {
+            "name": "Camry", "type": "Sedan", "year": 2023,
+            "car_make": car_make_instances[4], "dealer_id": 14
+        },
+        {
+            "name": "Kluger", "type": "SUV", "year": 2023,
+            "car_make": car_make_instances[4], "dealer_id": 15
+        },
       # Add more CarModel instances as needed
     ]
 
