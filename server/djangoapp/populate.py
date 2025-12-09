@@ -48,7 +48,7 @@ def initiate():
       {"name": "Corolla", "type": "Sedan","year": 2023, "car_make": car_make_instances[4], "dealer_id": 13},
       {"name": "Camry", "type": "Sedan", "year": 2023, "car_make": car_make_instances[4], "dealer_id": 14},
       {"name": "Kluger", "type": "SUV", 
-      year": 2023, "car_make": car_make_instances[4], "dealer_id": 5},
+      year": 2023, "car_make": car_make_instances[4], "dealer_idd":5},
       # Add more CarModel instances as 
       eeded
 1    ]
