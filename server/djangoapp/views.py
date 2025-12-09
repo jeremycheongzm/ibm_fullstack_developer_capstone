@@ -90,6 +90,7 @@ def get_dealerships(request):
     return JsonResponse({"status":200,"dealers":dealerships})
 
 # Create a `get_dealer_reviews` view to render the reviews of a dealer
+'''
 def get_dealer_reviews(request,dealer_id):
     if dealer_id:
         endpoint = "/fetchReviews/dealer/" + str(dealer_id)
@@ -97,6 +98,22 @@ def get_dealer_reviews(request,dealer_id):
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail['review'])
             review_detail['sentiment'] = response['sentiment']
+        return JsonResponse({"status": 200, "reviews": reviews})
+    else:
+        return JsonResponse({"status": 400, "message": "Bad Request"})
+'''
+def get_dealer_reviews(request, dealer_id):
+    if dealer_id:
+        endpoint = f"/fetchReviews/dealer/{dealer_id}"
+        reviews = get_request(endpoint)
+
+        if not isinstance(reviews, list):
+            reviews = []
+
+        for review_detail in reviews:
+            sentiment = analyze_review_sentiments(review_detail.get('review', ''))
+            review_detail['sentiment'] = sentiment.get('sentiment', 'neutral')
+
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
