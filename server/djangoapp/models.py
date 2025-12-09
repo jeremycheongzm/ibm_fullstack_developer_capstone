@@ -40,6 +40,5 @@ class CarModel(models.Model):
     )
     color = models.CharField(max_length=50, blank=True, null=True)
 
-
     def __str__(self):
         return f"{self.car_make.name} - {self.name}"
