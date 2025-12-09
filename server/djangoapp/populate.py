@@ -64,9 +64,9 @@ def initiate():
         {
             "name": "Carnival", "type": "SUV", "year": 2023,
             "car_make": car_make_instances[3], "dealer_id": 11
-        
         },
-        {   "name": "Cerato", "type"", "year": 2023,
+        {   
+            "name": "Cerato", "type": "Sedan", "year": 2023,
             "car_make": car_make_instances[3], "dealer_id": 12
         },
         {
