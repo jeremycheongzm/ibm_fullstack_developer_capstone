@@ -51,7 +51,7 @@ def initiate():
       year": 2023, "car_make": car_make_instances[4], "dealer_id": 5},
       # Add more CarModel instances as 
       eeded
-    ]
+1    ]
 
     for data in car_model_data:
         CarModel.objects.create(

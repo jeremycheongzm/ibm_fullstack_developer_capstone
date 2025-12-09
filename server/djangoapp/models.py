@@ -23,7 +23,7 @@ class CarModel(models.Model):
     )  # Many-to-One relationship
     dealer_id = models.IntegerField(
         null=True, blank=True
-    )  # allows dealer_id to be 
+    )  # allows dealer_id to be
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),

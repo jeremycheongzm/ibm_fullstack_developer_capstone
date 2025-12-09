@@ -1,6 +1,6 @@
 # Uncomment the required imports before adding the code
 
-from django.shortcuts import render
+# from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
@@ -50,8 +50,8 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-    #context = {}
-    #Load JSON data from the request body
+    # context = {}
+    # Load JSON data from the request body
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
@@ -122,7 +122,9 @@ def get_dealer_reviews(request, dealer_id):
             reviews = []
 
         for review_detail in reviews:
-            sentiment = analyze_review_sentiments(review_detail.get('review', ''))
+            sentiment = analyze_review_sentiments(
+                            review_detail.get('review', '')
+                        )
             review_detail['sentiment'] = sentiment.get('sentiment', 'neutral')
 
         return JsonResponse({"status": 200, "reviews": reviews})
@@ -132,8 +134,8 @@ def get_dealer_reviews(request, dealer_id):
 
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
-    if(dealer_id):
-        endpoint = "/fetchDealer/"+str(dealer_id)
+    if (dealer_id):
+        endpoint = "/fetchDealer/" + str(dealer_id)
         dealership = get_request(endpoint)
         return JsonResponse({"status": 200, "dealer": dealership})
     else:
@@ -142,12 +144,12 @@ def get_dealer_details(request, dealer_id):
 
 # Create a `add_review` view to submit a review
 def add_review(request):
-    if(request.user.is_anonymous is False):
+    if (request.user.is_anonymous is False):
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            # response = post_review(data)
             return JsonResponse({"status": 200})
-        except:
+        except Exception as err:
             return JsonResponse({
                 "status": 401,
                 "message": "Error in posting review"
@@ -162,7 +164,7 @@ def add_review(request):
 def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
-    if(count == 0):
+    if (count == 0):
         initiate()
     car_models = CarModel.objects.select_related('car_make')
     cars = []
