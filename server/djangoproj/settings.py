@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'jeremycheong-8000.theianext-0-labs-prod-misc-tools-us-east-0.'
-    'proxy.cognitiveclass.ai'
+    'proxy.cognitiveclass.ai',
+    'https://*.proxy.cognitiveclass.ai'
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://jeremycheong-8000.theianext-0-labs-prod-misc-tools-us-'
